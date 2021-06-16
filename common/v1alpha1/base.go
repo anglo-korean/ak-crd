@@ -1,5 +1,9 @@
 package v1alpha1
 
+const (
+	CRDVersion string = "v1alpha1"
+)
+
 // Base contains the options and keys all anko
 // CRDs include, including logic for templating
 // bits and bobs, along with defaults where necessary.
