@@ -17,7 +17,7 @@ This stuff will be used by any of our resources
 1. `contact: string` -> where errors, alerts, and so on should go
 1. `repo: string` -> location of repo 'thing' lives in
 1. `arbitratry_config: interface{}` -> just some stuff to dump into the default config map. Absolutely anything. It won't clobber the config map if it exists, but will overwrite any overlapping fields
-1. `storage_family: enum` -> one of ['low', 'cpuBound', 'memBound', 'greedy'] - these configure things like resource requests and limits
+1. `resource_family: enum` -> one of ['low', 'cpuBound', 'memBound', 'greedy'] - these configure things like resource requests and limits (probably best to allow these to be configured
 
 ### Optionals
 
@@ -25,8 +25,8 @@ If absent, then parent resources get skipped
 
 1. `storage.claim: string` -> optional storage claim (needs to be pre-created)
 1. `storage.mount_point: string` -> mount point for claim
-1. `preinstall: string` -> a container to run pre-install (to check envs, maybe- has access to all the secrets and configmaps)
-1. `postinstall: string` -> a container to run post-install (stuff like running migrations, or notifications perhaps)
+1. `preinstall: string` -> a container to run pre-install (to check envs, maybe- has access to all the secrets and configmaps). Additionally has the env var `PREINSTALL=true` set
+1. `postinstall: string` -> a container to run post-install (stuff like running migrations, or notifications perhaps). Additionally has the env var `POSTINSTALL=true` set
 
 
 ## Specific schema

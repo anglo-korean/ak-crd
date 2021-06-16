@@ -1,4 +1,4 @@
-package main
+package v1alpha1
 
 // Base contains the options and keys all anko
 // CRDs include, including logic for templating
